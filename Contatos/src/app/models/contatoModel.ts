@@ -1,5 +1,6 @@
-export class contatoModel{
+export class ContatoModel{
     ID: any;
+    _id: any;
     ContatoNome: string;
     ContatoTelefone: any;
     ContatoEmail: string;
@@ -13,6 +14,7 @@ export class contatoModel{
 
     loadContato(response: any){
         this.ID = response.ID;
+        this._id = response._id;
         this.ContatoNome = response.ContatoNome;
         this.ContatoEmail = response.ContatoEmail;
         this.ContatoTelefone = response.ContatoTelefone;
