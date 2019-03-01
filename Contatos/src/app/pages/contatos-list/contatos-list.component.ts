@@ -8,13 +8,49 @@ import { Component, OnInit } from '@angular/core';
 export class ContatosListComponent implements OnInit {
   contatoName: any;
   Contato:any;
-  item = JSON.parse(localStorage.Contato);
-
+  item: any = new Array();
+  teste: any = new Array();
+  teste2:any= new Array(); 
+  prafude: any = new Array();
   constructor() { }
 
   ngOnInit() {
-    console.log(localStorage);
-    // this.getValue();
+    this.valueToLocal();
+    this.list();
   }
 
+
+  list(){
+    // this.item = [];
+    this.item = JSON.parse(sessionStorage.Contatos);
+    console.log(this.item)
+  }
+
+  valueToLocal(){
+    this.teste = [{
+      Nome:"Testekk",
+      Telefone:11949723063,
+      Email:"fefe@emailkkkk"
+    },{
+      Nome:"Fernando",
+      Telefone:11999999999,
+      Email:"fefe@lalala"
+    }];
+    // console.log(this.teste.length);
+    for(var i = 0; i < this.teste.length; i++){
+    this.teste2[i] = (this.teste[i]);
+    // console.log(this.teste2);
+    }    
+    this.vamoVer();
+  }
+
+  vamoVer(){
+    this.prafude = {
+      Nome: "testenékkkk",
+      Telefone: 99999999,
+      Email: "KKKKKKKKKK"
+    }
+    this.teste2.push(this.prafude);
+    // console.log(this.teste2);
+  }
 }

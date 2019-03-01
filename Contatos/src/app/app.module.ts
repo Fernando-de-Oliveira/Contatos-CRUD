@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { HttpModule } from '@angular/http';
 import { ContatosCrudComponent } from './pages/contatos-crud/contatos-crud.component';
 import { ContatosListComponent } from './pages/contatos-list/contatos-list.component';
+import { ContatosEditComponent } from './pages/contatos-edit/contatos-edit.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ContatosCrudComponent,
-    ContatosListComponent
+    ContatosListComponent,
+    ContatosEditComponent
   ],
   imports: [
     BrowserModule,

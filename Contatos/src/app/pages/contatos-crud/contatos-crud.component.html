@@ -3,6 +3,8 @@
     <div class="col-md-12">
       <div class="card">
         <h3 class="card-title">Cadastrar Contatos</h3>
+        <!-- <h4>ID</h4>
+        <input disabled [(ngModel)]="contatoModel.ID" class="form-control form-control-sm col-sm-1"> -->
         <h4>Nome</h4>
         <input type="text" [(ngModel)]="contatosModel.ContatoNome" class="form-control form-control-sm col-sm-5">
         <div>    
@@ -16,7 +18,7 @@
         <div>
         <br><a href="/#/contatos-list" value="gravar" class="btn btn-success btn-sm" (click)="postContato()">Salvar</a>
         <!-- <br><button value="gravar" class="btn btn-success btn-sm" (click)="postContato()">Salvar</button> -->
-        <!-- <a href="/#/contatos-list" class="btn btn-primary btn-sm">Listagem</a> -->
+        <a href="/#/contatos-list" class="btn btn-primary btn-sm">Listagem</a>
         </div>
       </div>
     </div>
