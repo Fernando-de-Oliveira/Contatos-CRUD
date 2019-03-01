@@ -17,9 +17,9 @@ import { ContatosListComponent } from './pages/contatos-list/contatos-list.compo
   ],
   imports: [
     BrowserModule,
-    routes,
     HttpModule,
-    FormsModule
+    FormsModule,
+    routes
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
 

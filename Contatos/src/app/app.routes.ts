@@ -5,11 +5,14 @@ import { ContatosCrudComponent } from './pages/contatos-crud/contatos-crud.compo
 
 
 const appRoutes: Routes = [ 
-    { path: '',
-        children: [
-            { path: 'contatos', component: ContatosCrudComponent },
-            { path: 'contatos-list', component: ContatosListComponent}
-        ]
+    { path: 'contatos', component: ContatosCrudComponent
+        // children: [
+        //     { path: 'contatos', component: ContatosCrudComponent },
+        //     { path: 'contatos-list', component: ContatosListComponent}
+        // ]
+    },
+    {
+        path: 'contatos-list', component: ContatosListComponent
     }
 ];
 

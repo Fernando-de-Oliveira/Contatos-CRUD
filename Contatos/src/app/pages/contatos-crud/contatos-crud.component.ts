@@ -10,22 +10,49 @@ import {LOCAL_STORAGE, WebStorageService} from 'angular-webstorage-service';
 @Injectable()
 export class ContatosCrudComponent implements OnInit {
   public data:any=[]
+  contato: any = new Array();
+  key = "Contato";
+  contatoModel: ContatoModel = new ContatoModel;
+  contatosModel: any = ContatoModel;
+  
 
   constructor(
-    @Inject(LOCAL_STORAGE) private storage: WebStorageService) {
+    // @Inject(LOCAL_STORAGE) private storage: WebStorageService
+  ) {
      
-}
+  }
 
   ngOnInit() {
-
+    // localStorage[this.contato] = new Array();
+   
   } 
 
-  saveInLocal(key, val): void {
-    console.log('recieved= key:' + key + 'value:' + val);
-    this.storage.set(key, val);
-    this.data[key]= this.storage.get(key);
-   }
+  postContato(){
+  this.contatoModel.ContatoNome = this.contatosModel.ContatoNome;
+  this.contatoModel.ContatoTelefone = this.contatosModel.ContatoTelefone;
+  this.contatoModel.ContatoEmail = this.contatosModel.ContatoEmail;
+  this.addToLocal();
+  }
+
+  addToLocal(){
+  // Create item:
+  this.contato = { Nome:this.contatoModel.ContatoNome , Telefone: this.contatoModel.ContatoTelefone , Email: this.contatoModel.ContatoEmail };
+  localStorage.setItem(this.key, JSON.stringify(this.contato));
+  console.log(this.contato);
+  }
+
+  getFromLocal(){
+  // Read item:
+  let item = JSON.parse(localStorage.getItem(this.key));
+  console.log(this.key)
+  }
 
 
-
-}
+  // localItering(){
+  //   for (let i = 0; i < localStorage.length; i++){
+  //     let key = localStorage.key(i);
+  //     let value = localStorage.getItem(key);
+  //     console.log(key, value);
+  //   }
+  // }
+  }

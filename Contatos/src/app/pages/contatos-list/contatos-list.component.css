@@ -1,0 +1,6 @@
+.col-m-3, .col-m-4, .col-m-5,{
+    position: relative;
+    width: 10% !important;
+    padding-right: 15px;
+    padding-left: 15px;
+}

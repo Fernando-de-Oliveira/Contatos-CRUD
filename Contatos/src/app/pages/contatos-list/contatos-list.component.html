@@ -4,20 +4,21 @@
           <table class="table table-striped">
               <thead class="thead-dark">
               <tr scope="row">
-                <th scope="col">ID</th>
-                <th scope="col">Nome</th>
-                <th scope="col">Email</th>
-                <th class="col">Telefone</th>
-                <th></th>
+                <!-- <th scope="col">ID</th> -->
+                <th class="col-m-4">Nome</th>
+                <th class="col-m-5">Email</th>
+                <th class="col-m-3">Telefone</th>
+                <!-- <th></th> -->
               </tr>
               </thead>
-              <tbody *ngFor="let ContatoNome of ContatoModel">
+              <tbody>
+                  <!-- *ngFor="let ContatoNome of ContatoModel" -->
                 <tr scope="row" class="table-bordered">
-                  <th scope="row">{{ ContatoNome.ID }}</th>
-                  <td>{{ ContatoNome.ContatoNome }}</td>                  
-                  <td>{{ContatoNome.ContatoEmail}}</td>
-                  <td>{{ContatoNome.ContatoTelefone}}</td>
-                  <th><a style="margin-left:50px" class="btn btn-xs btn-dark" [routerLink]="['/edit-contato', ContatoNome._id]">Editar</a></th>
+                  <!-- <th scope="row">{{ ContatoNome.ID }}</th> -->
+                  <td class="col-m-4">{{ item.Nome }}</td>                  
+                  <td class="col-m-5">{{ item.Email }}</td>
+                  <td class="col-m-3">{{ item.Telefone }}</td>
+                  <!-- <th><a style="margin-left:50px" class="btn btn-xs btn-dark" [routerLink]="['/edit-contato', ContatoNome._id]">Editar</a></th> -->
                  </tr>                 
               </tbody>
        </table>
