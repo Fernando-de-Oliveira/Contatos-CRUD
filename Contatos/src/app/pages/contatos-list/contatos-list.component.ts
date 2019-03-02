@@ -13,6 +13,9 @@ export class ContatosListComponent implements OnInit {
   teste2:any= new Array(); 
   prafude: any = new Array();
   nome = "Nome";
+  key2 = "Contador"
+  key22 = sessionStorage.getItem(this.key2);
+
   constructor() { }
 
   ngOnInit() {
@@ -22,6 +25,7 @@ export class ContatosListComponent implements OnInit {
 
 
   list(){
+    console.log(this.key22);
     // this.item = [];
     this.item = JSON.parse(sessionStorage.Contatos);
     console.log(this.item);

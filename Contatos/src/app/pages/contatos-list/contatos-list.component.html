@@ -11,15 +11,24 @@
                 <th></th>
               </tr>
               </thead>
-              <tbody>
-                <tr *ngFor="let contato of item" scope="row" class="table-bordered">
+              <tbody *ngIf="key22 == 'Contador'">
+                  <tr scope="row" class="table-bordered">
+                      <!-- <th scope="row">{{ ContatoNome.ID }}</th> -->
+                      <td class="col-m-4">{{ item.Nome }}</td>                  
+                      <td class="col-m-5">{{ item.Email }}</td>
+                      <td class="col-m-3">{{ item.Telefone }}</td>
+                      <!-- <th><a style="margin-left:50px" class="btn btn-xs btn-dark" [routerLink]="['/edit-contato', contato.ID]">Editar</a></th> -->
+                     </tr>
+                </tbody>
+                <tbody *ngIf="key22 == 'Acabou'">
+                <tr  *ngFor="let contato of item" scope="row" class="table-bordered">
                   <!-- <th scope="row">{{ ContatoNome.ID }}</th> -->
                   <td class="col-m-4">{{ contato.Nome }}</td>                  
                   <td class="col-m-5">{{ contato.Email }}</td>
                   <td class="col-m-3">{{ contato.Telefone }}</td>
                   <!-- <th><a style="margin-left:50px" class="btn btn-xs btn-dark" [routerLink]="['/edit-contato', contato.ID]">Editar</a></th> -->
                  </tr>                 
-              </tbody>
+                </tbody>
        </table>
        <a href="/#/contatos" class="btn btn-primary">Cadastro</a>
   </div>
