@@ -20,8 +20,9 @@
             <input type="text" [(ngModel)]="contatosModel.ContatoEmail" class="form-control form-control-sm col-sm-5">    
           </div>
         <div>
-        <br><a href="/#/contatos-list" value="gravar" class="btn btn-success btn-sm" (click)="postContato()">Salvar</a>
-        <!-- <br><button value="gravar" class="btn btn-success btn-sm" (click)="postContato()">Salvar</button> -->
+       
+        <br><button *ngIf="!contatosModel.ContatoNome || !contatosModel.ContatoEmail || !contatosModel.ContatoTelefone" disabled class="btn btn-sm btn-fill btn-success" type="submit">Salvar</button>
+        <button *ngIf="contatosModel.ContatoNome && contatosModel.ContatoEmail && contatosModel.ContatoTelefone" class="btn btn-sm btn-fill btn-success" (click)="postContato()" type="submit">Salvar</button>
         <a href="/#/contatos-list" (click)="defineOff()" class="btn btn-primary btn-sm">Listagem</a>
         </div>
       </div>

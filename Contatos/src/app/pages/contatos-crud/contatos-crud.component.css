@@ -4,3 +4,7 @@ div, body {
 input:focus {
     background-color: #FFD;
 }
+
+button{
+    margin-right: 15px;
+}

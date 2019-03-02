@@ -1,6 +1,7 @@
 import { Component, OnInit, Injectable, Inject } from '@angular/core';
 import { ContatoModel } from '../../models/contatoModel';
 import {LOCAL_STORAGE, WebStorageService} from 'angular-webstorage-service';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-contatos-crud',
@@ -27,6 +28,8 @@ export class ContatosCrudComponent implements OnInit {
   key3: any = "primeiro";
 
   constructor(
+    private route: ActivatedRoute,
+    private router: Router
   ) {
      
   }
@@ -106,6 +109,7 @@ export class ContatosCrudComponent implements OnInit {
   this.contatoModel.ContatoTelefone = this.contatosModel.ContatoTelefone;
   this.contatoModel.ContatoEmail = this.contatosModel.ContatoEmail;
   this.addToLocal();
+  this.router.navigate(['/contatos-list']);  
   }
 
 
