@@ -18,6 +18,9 @@ export class ContatosCrudComponent implements OnInit {
   existing = sessionStorage.getItem("Contatos");
   teste: any = new Array();
   a: any = new Array();
+  testel: any = new Array();
+  indicador = true;
+  key2: any = "Contador";
 
   constructor(
   ) {
@@ -25,7 +28,6 @@ export class ContatosCrudComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.valueToLocal();
   } 
 
   postContato(){
@@ -42,27 +44,38 @@ export class ContatosCrudComponent implements OnInit {
   }
 
 
-   updateSession(contato){
-    //  JSON.stringify(this.contato);
-    this.teste = JSON.stringify(sessionStorage.getItem(this.key));
+   updateSession(contato){    
+    this.testel = new Array();
+    console.log(this.key2)      
+    console.log(sessionStorage.getItem(this.key2));
+    if(sessionStorage.getItem(this.key2) == "Contador"){    
+      this.teste.push(JSON.parse(sessionStorage.getItem(this.key)));
+      console.log("entro");
+    }
+    else if (sessionStorage.getItem(this.key2) == "Acabou"){
+      this.teste = JSON.parse(sessionStorage.getItem(this.key));
+      console.log("entrou no else");
+    }
+    console.log(typeof this.teste);  
+    console.log(this.teste);  
     this.teste.push(contato);
     sessionStorage.setItem(this.key, JSON.stringify(this.teste));
+    sessionStorage.setItem(this.key2, "Acabou");
 }
 
   addToLocal(){
     this.contato = { /*ID:this.contatoModel.ID ,*/ Nome:this.contatoModel.ContatoNome , Telefone: this.contatoModel.ContatoTelefone , Email: this.contatoModel.ContatoEmail };
     if(!sessionStorage.Contatos){
-  sessionStorage.setItem(this.key, this.contato);
+      sessionStorage.setItem(this.key2, "Contador");
+      sessionStorage.setItem(this.key, JSON.stringify(this.contato));
+      console.log(this.contato)
+      
     } else if(sessionStorage.Contatos){ 
-    this.updateSession(this.contato);
+      console.log(this.contato);
+      this.updateSession(this.contato);
     }
 
   }
-    valueToLocal(){
-      this.teste = [];
-    }
-
-
 
   // localItering(){
   //   for (let i = 0; i < localStorage.length; i++){

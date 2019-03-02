@@ -12,6 +12,7 @@ export class ContatosListComponent implements OnInit {
   teste: any = new Array();
   teste2:any= new Array(); 
   prafude: any = new Array();
+  nome = "Nome";
   constructor() { }
 
   ngOnInit() {
@@ -23,7 +24,7 @@ export class ContatosListComponent implements OnInit {
   list(){
     // this.item = [];
     this.item = JSON.parse(sessionStorage.Contatos);
-    console.log(this.item)
+    console.log(this.item);
   }
 
   valueToLocal(){
