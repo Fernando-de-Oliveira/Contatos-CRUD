@@ -15,7 +15,7 @@ const appRoutes: Routes = [
         path: 'contatos-list', component: ContatosListComponent
     },
     {
-        path: 'contatos-edit:ID', component: ContatosEditComponent
+        path: 'contatos-edit/:ID', component: ContatosEditComponent
     }
 ];
 

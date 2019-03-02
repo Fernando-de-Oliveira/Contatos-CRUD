@@ -1,3 +1,24 @@
-<p>
-  contatos-edit works!
-</p>
+<div class="row">
+  <div class="col-md-6">
+      <form #form="ngForm" class="form-horizontal m-t-20" name="form">
+  <div class="form-group">
+      <h3 style="font-weight: 400" class="card-title">Editar Contato {{ contato.Nome }} </h3> 
+    <h4 class="title">Nome</h4>
+    <p style="color: red; font-size: 20px; margin-top: -10px; margin-bottom:5px" *ngIf="!contato.Nome">*campo obrigatório</p>    
+    <input [(ngModel)]="contato.Nome" class="form-control" type="text" name="name">
+    <h4 class="title">Email</h4>
+    <p style="color: red; font-size: 20px; margin-top: -10px; margin-bottom:5px" *ngIf="!contato.Email">*campo obrigatório</p>        
+    <input [(ngModel)]="contato.Email"class="form-control" type="email" name="email">
+    <h4 class="title">Telefone</h4>
+    <p style="color: red; font-size: 20px; margin-top: -10px; margin-bottom:5px" *ngIf="!contato.Telefone">*campo obrigatório</p>        
+    <input [(ngModel)]="contato.Telefone" maxlength="15" pattern="\d*" class="form-control" type="text" name="telefone">
+    
+    
+  <br><button *ngIf="!contato.Nome || !contato.Email || !contato.Telefone" disabled class="btn btn-sm btn-fill btn-success" type="submit">Salvar</button>
+  <button *ngIf="contato.Nome && contato.Email && contato.Telefone" class="btn btn-sm btn-fill btn-success" (click)="update()" type="submit">Salvar</button>
+ 
+  <a href="/#/contatos-list" class="btn btn-sm btn-info btn-fill btn-wd">Voltar</a>
+ </div> 
+</form>
+</div>
+</div>

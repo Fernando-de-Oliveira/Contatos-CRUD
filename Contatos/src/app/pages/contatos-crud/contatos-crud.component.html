@@ -5,26 +5,26 @@
         <h3 class="card-title">Cadastrar Contatos</h3>
         <!-- <h4>ID</h4>
         <input disabled [(ngModel)]="contatoModel.ID" class="form-control form-control-sm col-sm-1"> -->
+        
         <h4>Nome</h4>
+        <p style="color: red; font-size: 20px; margin-top: -10px; margin-bottom:5px" *ngIf="!contatosModel.ContatoNome">*campo obrigatório</p>
         <input type="text" [(ngModel)]="contatosModel.ContatoNome" class="form-control form-control-sm col-sm-5">
         <div>    
-          <label><h4>Telefone</h4></label>
+          <h4>Telefone</h4>
+          <p style="color: red; font-size: 20px; margin-top: -10px; margin-bottom:5px" *ngIf="!contatosModel.ContatoTelefone">*campo obrigatório</p>
           <input type="number" [(ngModel)]="contatosModel.ContatoTelefone" class="form-control form-control-sm col-sm-5">    
         </div>
         <div>    
-            <label><h4>Email</h4></label>
+            <h4>Email</h4>
+            <p style="color: red; font-size: 20px; margin-top: -10px; margin-bottom:5px" *ngIf="!contatosModel.ContatoEmail">*campo obrigatório</p>
             <input type="text" [(ngModel)]="contatosModel.ContatoEmail" class="form-control form-control-sm col-sm-5">    
           </div>
         <div>
         <br><a href="/#/contatos-list" value="gravar" class="btn btn-success btn-sm" (click)="postContato()">Salvar</a>
         <!-- <br><button value="gravar" class="btn btn-success btn-sm" (click)="postContato()">Salvar</button> -->
-        <a href="/#/contatos-list" class="btn btn-primary btn-sm">Listagem</a>
+        <a href="/#/contatos-list" (click)="defineOff()" class="btn btn-primary btn-sm">Listagem</a>
         </div>
       </div>
     </div>
   </div>
 </body>
-
-<!-- <body>
-  <p>texto por favor aparece namoral</p>
-</body> -->

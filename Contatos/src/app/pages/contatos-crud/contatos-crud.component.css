@@ -1,0 +1,6 @@
+div, body {
+    background-color: aliceblue;
+}
+input:focus {
+    background-color: #FFD;
+}
